@@ -1,0 +1,34 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 00:50:39 2017
+Command line arguments: --prism service/unfolded_service.prism --prop service/unfolded_properties.prctl single1 -const B1=2400 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 103.670s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	5582812
+Transitions: 	12140835
+Choices: 	10898089
+Reward Models:  none
+State Labels: 	4 labels
+   * init -> 1 item(s)
+   * taskdone -> 189759 item(s)
+   * deadlock -> 0 item(s)
+   * bound1 -> 5506012 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [F ("bound1" & "taskdone")] ...
+Result (for initial states): 0.9966213514
+Time for model checking: 32.438s.
+
+Performance statistics:
+  * peak memory usage: 1112MB
+  * CPU time: 134.656s
+  * wallclock time: 136.148s
+
+real	2m16.234s
+user	2m14.660s
+sys	0m1.456s

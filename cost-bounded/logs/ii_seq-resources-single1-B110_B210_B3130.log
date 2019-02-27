@@ -1,0 +1,47 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 01:32:00 2017
+Command line arguments: --prism resources/resources5_5.prism --prop resources/properties.prctl single1 -const B1=10,B2=10,B3=130 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 0.169s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	94
+Transitions: 	326
+Choices: 	302
+Reward Models:  steps, gold, gem
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [true U[{"gold"}>10 ,{"gem"}>10 ,{"steps"}<=130 ]true] ...
+Objective/Dimension/Epoch count is: 1/3/17930.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 17930.
+             overall Time: 3.707s.
+Epoch Model building Time: 3.271s.
+Epoch Model checking Time: 0.337s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 188
+  maxSolutionsStored: 3025
+Occurring Epoch model sizes: 1 94 1 1 94 94 1 94 
+---------------------------------------------
+
+Result (for initial states): 0
+Time for model checking: 3.736s.
+
+Performance statistics:
+  * peak memory usage: 219MB
+  * CPU time: 3.888s
+  * wallclock time: 3.914s
+
+real	0m3.998s
+user	0m3.892s
+sys	0m0.088s

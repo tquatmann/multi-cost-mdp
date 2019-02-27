@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Thu Oct 19 22:38:44 2017
+Command line arguments: --prism firewire/firewire.prism --prop firewire/properties.props single1 -const delay=36,B1=500,B2=10 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.168s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	776
+Transitions: 	1411
+Choices: 	1189
+Reward Models:  time, rounds
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmin=? [true U[{"time"}<=500 ,{"rounds"}<=10 ]"done"] ...
+Objective/Dimension/Epoch count is: 1/2/6024.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 6024.
+             overall Time: 2.172s.
+Epoch Model building Time: 0.893s.
+Epoch Model checking Time: 1.262s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 1551
+  maxSolutionsStored: 513
+Occurring Epoch model sizes: 776 776 776 776 
+---------------------------------------------
+
+Result (for initial states): 0.78125
+Time for model checking: 2.188s.
+
+Performance statistics:
+  * peak memory usage: 218MB
+  * CPU time: 2.300s
+  * wallclock time: 2.365s
+
+real	0m2.441s
+user	0m2.308s
+sys	0m0.120s

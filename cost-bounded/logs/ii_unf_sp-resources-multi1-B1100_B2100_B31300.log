@@ -1,0 +1,10 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 09:11:42 2017
+Command line arguments: --prism resources/unfolded_resources5_5.prism --prop resources/unfolded_properties.prctl multi1 -const B1=100,B2=100,B3=1300 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+
+real	120m2.506s
+user	115m54.764s
+sys	0m50.348s

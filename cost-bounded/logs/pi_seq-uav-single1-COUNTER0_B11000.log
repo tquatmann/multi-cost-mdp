@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 02:22:13 2017
+Command line arguments: --prism uav/uav.prism --prop uav/properties.props single1 -const COUNTER=0,B1=1000 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 0.786s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	9695
+Transitions: 	59868
+Choices: 	19222
+Reward Models:  time
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((w1 & w2) & w6) -> 6414 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [true U{"time"}<=1000 ((w1 & w2) & w6)] ...
+Objective/Dimension/Epoch count is: 1/1/102.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 102.
+             overall Time: 45.415s.
+Epoch Model building Time: 4.307s.
+Epoch Model checking Time: 41.107s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 12975
+  maxSolutionsStored: 6
+Occurring Epoch model sizes: 3688 9695 
+---------------------------------------------
+
+Result (for initial states): 143440456541682484173019776542367879901247779717565117634337101728691696697255324212797952844885824645595368491226956679835774476438460607271290927587758575305246737419/143441881917165473366016000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (approx. 0.999990063)
+Time for model checking: 45.585s.
+
+Performance statistics:
+  * peak memory usage: 226MB
+  * CPU time: 43.400s
+  * wallclock time: 46.418s
+
+real	0m46.509s
+user	0m43.412s
+sys	0m3.012s

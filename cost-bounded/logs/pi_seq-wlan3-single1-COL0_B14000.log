@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 02:22:16 2017
+Command line arguments: --prism wlan/wlan3.nm --prop wlan/properties.prctl single1 -const COL=0,B1=4000 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 3.695s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	96302
+Transitions: 	204576
+Choices: 	123730
+Reward Models:  time
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmin=? [true U{"time"}<=4000 ((s1 = 12) & (s2 = 12))] ...
+Objective/Dimension/Epoch count is: 1/1/82.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 82.
+             overall Time: 795.589s.
+Epoch Model building Time: 4.328s.
+Epoch Model checking Time: 791.260s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 192602
+  maxSolutionsStored: 1
+Occurring Epoch model sizes: 96301 96302 
+---------------------------------------------
+
+Result (for initial states): 209/256 (approx. 0.81640625)
+Time for model checking: 796.541s.
+
+Performance statistics:
+  * peak memory usage: 1490MB
+  * CPU time: 702.032s
+  * wallclock time: 800.372s
+
+real	13m20.469s
+user	11m42.036s
+sys	1m36.592s

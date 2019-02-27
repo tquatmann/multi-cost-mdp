@@ -1,0 +1,35 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 01:50:21 2017
+Command line arguments: --prism firewire/unfolded_firewire.prism --prop firewire/unfolded_properties.props single1 -const delay=36,B1=500,B2=10 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 16.311s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	666557
+Transitions: 	1202470
+Choices: 	998378
+Reward Models:  none
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * bound1 -> 659957 item(s)
+   * bound2 -> 665781 item(s)
+   * init -> 1 item(s)
+   * done -> 1248 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmin=? [F (("bound1" & "bound2") & "done")] ...
+Result (for initial states): 25/32 (approx. 0.78125)
+Time for model checking: 257.486s.
+
+Performance statistics:
+  * peak memory usage: 1271MB
+  * CPU time: 242.960s
+  * wallclock time: 273.908s
+
+real	4m34.183s
+user	4m3.076s
+sys	0m30.944s

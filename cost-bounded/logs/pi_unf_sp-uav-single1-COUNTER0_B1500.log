@@ -1,0 +1,34 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 08:10:58 2017
+Command line arguments: --prism uav/unfolded_uav.prism --prop uav/unfolded_properties.props single1 -const COUNTER=0,B1=500 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 2.874s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	39140
+Transitions: 	223206
+Choices: 	65239
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * bound1 -> 29448 item(s)
+   * init -> 1 item(s)
+   * ((w1 & w2) & w6) -> 14166 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [F ("bound1" & ((w1 & w2) & w6))] ...
+Result (for initial states): 152994143736516754463119330421808117645210427315049/157286400000000000000000000000000000000000000000000 (approx. 0.9727105696)
+Time for model checking: 0.720s.
+
+Performance statistics:
+  * peak memory usage: 245MB
+  * CPU time: 3.448s
+  * wallclock time: 3.642s
+
+real	0m3.747s
+user	0m3.468s
+sys	0m0.260s

@@ -1,0 +1,10 @@
+const int B1; // goal_value = 99;
+const int B2; // high_goal_value = 139;
+const int B3; // available_time = 180; // in minutes
+const int B4; // available_energy = 100; // in percent
+
+"single1": Pmax=? [F{"value"}>B1,{"time"}<=B3,{"energy"}<=B4 done];
+
+"multi1": multi(Pmax=? [F{"value"}>B1 done], Pmax=? [F{"time"}<=B3,{"energy"}<=B4 done]);
+"multi2": multi(Pmax=? [F{"value"}>B1,{"time"}<=B3,{"energy"}<=B4 done], Pmax=? [F{"value"}>B2,{"time"}<=B3,{"energy"}<=B4 done]);
+"multi3": multi(Pmax=? [F{"value"}>B1,{"time"}<=B3,{"energy"}<=B4 done], Pmax=? [F{"value"}>B1/2,{"time"}<=B3/2,{"energy"}<=B4/2 done], Pmax=? [F{"time"}<=B3,{"energy"}<=B4 done]);

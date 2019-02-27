@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 00:38:59 2017
+Command line arguments: --prism rover/rover.prism --prop rover/properties.props single1 -const B1=99,B2=-1,B3=180,B4=100 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.252s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	16
+Transitions: 	30
+Choices: 	20
+Reward Models:  value, time, energy
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [true U[{"value"}>99 ,{"time"}<=180 ,{"energy"}<=100 ]done] ...
+Objective/Dimension/Epoch count is: 1/3/86013.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 86013.
+             overall Time: 105.732s.
+Epoch Model building Time: 2.116s.
+Epoch Model checking Time: 101.910s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 32
+  maxSolutionsStored: 39156
+Occurring Epoch model sizes: 2 16 16 16 16 16 16 16 
+---------------------------------------------
+
+Result (for initial states): 3315467349721325213937053/4096000000000000000000000 (approx. 0.8094402709)
+Time for model checking: 106.127s.
+
+Performance statistics:
+  * peak memory usage: 218MB
+  * CPU time: 106.344s
+  * wallclock time: 106.398s
+
+real	1m46.562s
+user	1m46.364s
+sys	0m0.168s

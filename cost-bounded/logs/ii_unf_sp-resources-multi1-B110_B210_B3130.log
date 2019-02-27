@@ -1,0 +1,52 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 07:58:29 2017
+Command line arguments: --prism resources/unfolded_resources5_5.prism --prop resources/unfolded_properties.prctl multi1 -const B1=10,B2=10,B3=130 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 18.026s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	625075
+Transitions: 	2173624
+Choices: 	2011352
+Reward Models:  none
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * bound1 -> 607879 item(s)
+   * bound2 -> 619183 item(s)
+   * init -> 1 item(s)
+   * bound3 -> 611539 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [F (!("bound1") & "bound3")], Pmax=? [F (!("bound2") & "bound3")]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0) * x <= 0.999991
+   (         1,   0.999344) * x <= 0.999991
+   (         0,          1) * x <= 1
+   (         1,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 0.999991
+   (         0,          1) * x <= 1
+   (  0.500002,   0.499998) * x <= 0.500002
+
+3 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (         0,          1 )
+   (  0.986022,   0.013978 )
+   (0.9999908333,          0 )
+
+
+Time for model checking: 6.829s.
+
+Performance statistics:
+  * peak memory usage: 327MB
+  * CPU time: 24.492s
+  * wallclock time: 24.882s
+
+real	0m25.038s
+user	0m24.496s
+sys	0m0.504s

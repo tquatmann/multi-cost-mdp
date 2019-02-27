@@ -1,0 +1,35 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 08:10:58 2017
+Command line arguments: --prism resources/unfolded_resources5_5.prism --prop resources/unfolded_properties.prctl single1 -const B1=10,B2=10,B3=130 -e dd --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 0.138s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (symbolic)
+States: 	625075 (1017 nodes)
+Transitions: 	2173624 (10630 nodes)
+Choices: 	2011352
+Reward Models:  none
+Variables: 	rows: 8 meta variables (25 DD variables), columns: 8 meta variables (25 DD variables), nondeterminism: 4 meta variables (4 DD variables)
+Labels: 	5
+   * deadlock -> 0 state(s) (1 nodes)
+   * init -> 1 state(s) (26 nodes)
+   * bound1
+   * bound2
+   * bound3
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [F ((!("bound1") & !("bound2")) & "bound3")] ...
+Result (for initial states): 0
+Time for model checking: 0.003s.
+
+Performance statistics:
+  * peak memory usage: 45MB
+  * CPU time: 0.192s
+  * wallclock time: 0.157s
+
+real	0m0.237s
+user	0m0.196s
+sys	0m0.024s

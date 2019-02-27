@@ -1,0 +1,10 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 02:52:15 2017
+Command line arguments: --prism jobsched/unfolded_05procs.prism --prop jobsched/unfolded_properties.props multi1 -const B1=2,B2=65,B3=5,B4=325 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+
+real	120m1.857s
+user	119m34.820s
+sys	0m25.712s

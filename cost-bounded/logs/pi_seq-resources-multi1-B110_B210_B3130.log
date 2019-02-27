@@ -1,0 +1,64 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 01:25:47 2017
+Command line arguments: --prism resources/resources5_5.prism --prop resources/properties.prctl multi1 -const B1=10,B2=10,B3=130 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.271s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	94
+Transitions: 	326
+Choices: 	302
+Reward Models:  steps, gold, gem
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [true U[{"gold"}>10 ,{"steps"}<=130 ]true], Pmax=? [true U[{"gem"}>10 ,{"steps"}<=130 ]true]) ...
+Objective/Dimension/Epoch count is: 2/4/17930.
+WVC statistics: 
+                overall Time: 50.843s.
+---------------------------------------------
+     #checked weight vectors: 3.
+             #checked epochs: 53790.
+#Sched reused from prev. ep.: 53790.
+   Epoch Model building time: 37.242s.
+   Epoch Model checking time: 13.136s.
+Implicit unfolding statistics: 
+ Memory Product size: 376
+  maxSolutionsStored: 5731
+Occurring Epoch model sizes: 1 1 1 94 1 94 94 94 1 1 1 94 1 94 94 94 1 1 1 94 1 94 94 94 
+---------------------------------------------
+
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0) * x <= 49999541667158770110503071196611024719/50000000000000000000000000000000000000
+   (         0,          1) * x <= 1
+   (         1, 698441667158770110503071196611024719/698900000000000000000000000000000000) * x <= 49999541667158770110503071196611024719/50000000000000000000000000000000000000
+   (         1,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 49999541667158770110503071196611024719/50000000000000000000000000000000000000
+   (         0,          1) * x <= 1
+   (50000000000000000000000000000000000000/99999541667158770110503071196611024719, 49999541667158770110503071196611024719/99999541667158770110503071196611024719) * x <= 24999996796711772644302305964593114451761091/49999770833579385055251535598305512359500000
+
+3 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (493011/500000, 6989/500000 )
+   (         0,          1 )
+   (49999541667158770110503071196611024719/50000000000000000000000000000000000000,          0 )
+
+
+Time for model checking: 50.998s.
+
+Performance statistics:
+  * peak memory usage: 218MB
+  * CPU time: 51.312s
+  * wallclock time: 51.504s
+
+real	0m51.673s
+user	0m51.316s
+sys	0m0.316s

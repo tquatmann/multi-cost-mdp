@@ -1,0 +1,36 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 01:34:15 2017
+Command line arguments: --prism rover/unfolded_rover.prism --prop rover/unfolded_properties.props single1 -const B1=499,B2=-1,B3=900,B4=500 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 3132.366s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	180820752
+Transitions: 	339038910
+Choices: 	226025940
+Reward Models:  none
+State Labels: 	6 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * bound1 -> 180153520 item(s)
+   * bound4 -> 180381392 item(s)
+   * bound3 -> 179914704 item(s)
+   * done -> 11301297 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [F (((!("bound1") & "bound3") & "bound4") & done)] ...
+Result (for initial states): 0.9374534714
+Time for model checking: 2906.626s.
+
+Performance statistics:
+  * peak memory usage: 36374MB
+  * CPU time: 5976.468s
+  * wallclock time: 6039.786s
+
+real	100m40.038s
+user	99m36.468s
+sys	0m59.256s

@@ -1,0 +1,10 @@
+const int B1;
+const int B2;
+const int B3;
+
+
+"single1": Pmax=? [F{"gold"}>B1,{"gem"}>B2,{"steps"}<=B3 true];
+"multi1": multi(Pmax=? [F {"gold"}>B1,{"steps"}<=B3 true], Pmax=? [F{"gem"}>B2,{"steps"}<=B3 true]);
+"multi2": multi(Pmax=? [F {"gold"}>B1,{"steps"}<=B3 true], Pmax=? [F{"gem"}>B2,{"steps"}<=B3 true], R{"attacks"}min=? [ C{"steps"}<=B3]);
+
+

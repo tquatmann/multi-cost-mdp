@@ -1,0 +1,35 @@
+Storm 1.3.1 (dev)
+
+Date: Tue Feb  5 07:07:32 2019
+Command line arguments: --prism nand/unfolded_nand.prism --prop nand/unfolded_nand.props --constants 'N=60,K=4' --sound '--native:method' ii --statistics --timemem
+Current working directory: /home/tim.quatmann/reward-bounded-dtmc/benchmarks
+
+ WARN (NativeEquationSolverSettings.cpp:123): Native is not selected as the preferred equation solver, so setting options for native might have no effect.
+Time for model input parsing: 0.004s.
+
+Time for model construction: 116.182s.
+
+-------------------------------------------------------------- 
+Model type: 	DTMC (sparse)
+States: 	18826082
+Transitions: 	29772212
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s = 4) & ((z / 60) < 1/10)) -> 6 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "reliable": P=? [F ((s = 4) & ((z / 60) < 1/10))] ...
+Result (for initial states): 0.6867214589
+Time for model checking: 28.586s.
+
+Performance statistics:
+  * peak memory usage: 4174MB
+  * CPU time: 142.853s
+  * wallclock time: 144.785s
+
+real	2m24.852s
+user	2m22.864s
+sys	0m1.891s

@@ -1,0 +1,10 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 19:32:36 2017
+Command line arguments: --prism resources/unfolded_resources5_5.prism --prop resources/unfolded_properties.prctl multi1 -const B1=100,B2=100,B3=1300 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+
+real	120m5.008s
+user	119m3.800s
+sys	0m56.304s

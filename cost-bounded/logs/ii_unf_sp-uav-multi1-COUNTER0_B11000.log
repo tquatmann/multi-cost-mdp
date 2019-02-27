@@ -1,0 +1,88 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 09:22:25 2017
+Command line arguments: --prism uav/unfolded_uav.prism --prop uav/unfolded_properties.props multi1 -const COUNTER=0,B1=1000 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 11.567s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	399246
+Transitions: 	2400514
+Choices: 	759567
+Reward Models:  ROZ
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * bound1 -> 389554 item(s)
+   * init -> 1 item(s)
+   * ((w1 & w2) & w6) -> 238690 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [F ("bound1" & ((w1 & w2) & w6))], R[exp]{"ROZ"}min=? [F !("bound1")]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 16 Halfspaces:
+   (         1,  -0.927239) * x <= 0.480856
+   (         1,  -0.189305) * x <= 0.891202
+   (         1,  -0.290393) * x <= 0.834865
+   (  0.779975,         -1) * x <= 0.226568
+   (   0.76351,         -1) * x <= 0.221695
+   (  0.787118,         -1) * x <= 0.22887
+   (   0.85329,         -1) * x <= 0.294514
+   (         1,  -0.645457) * x <= 0.637367
+   (         0,         -1) * x <= 0
+   (         1, -0.000967381) * x <= 0.999097
+   (  0.786354,         -1) * x <= 0.228557
+   (         1,          0) * x <= 0.99999
+   (         1, -0.00707931) * x <= 0.993832
+   (         1, -0.00871186) * x <= 0.992835
+   (         1, -0.0476644) * x <= 0.970579
+   (         1, -0.0937561) * x <= 0.944636
+
+Overapproximation of achievable values: Polytope with 16 Halfspaces:
+   (         1,          0) * x <= 0.99999
+   (         0,         -1) * x <= 0
+   (  0.480001,  -0.519999) * x <= 0.18926
+   (  0.357872,  -0.642128) * x <= 0.103913
+   (  0.440387,  -0.559613) * x <= 0.12804
+   (   0.98687, -0.0131296) * x <= 0.97721
+   (  0.860207,  -0.139793) * x <= 0.779508
+   (  0.993846, -0.00615398) * x <= 0.988475
+   (  0.701412,  -0.298588) * x <= 0.532796
+   (  0.942121, -0.0578786) * x <= 0.907102
+   (  0.992752, -0.00724775) * x <= 0.986494
+   (  0.440548,  -0.559452) * x <= 0.128233
+   (  0.439597,  -0.560403) * x <= 0.127748
+   (  0.558417,  -0.441583) * x <= 0.310843
+   (  0.436821,  -0.563179) * x <= 0.126875
+   (  0.815919,  -0.184081) * x <= 0.71064
+
+15 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.9981549023, 0.6106899173 )
+   (0.9999305063, 0.8615058282 )
+   (0.9978121712, 0.5713491864 )
+   (0.999990063, 0.923070808 )
+   (0.996703431, 0.5573100748 )
+   (0.9974072884, 0.5628547429 )
+   (0.9970680003, 0.5592359048 )
+   (0.9950876147, 0.5545837829 )
+   (0.9963900052, 0.556230758 )
+   (0.9958751895, 0.555433159 )
+   (0.4094994918, 0.09345473345 )
+   (0.2960009352, 0.004305111944 )
+   (0.3117505994, 0.01658945864 )
+   (0.2903623582,          0 )
+   (0.9920377095, 0.5519813308 )
+
+
+Time for model checking: 58.684s.
+
+Performance statistics:
+  * peak memory usage: 377MB
+  * CPU time: 69.908s
+  * wallclock time: 70.291s
+
+real	1m10.382s
+user	1m9.912s
+sys	0m0.376s

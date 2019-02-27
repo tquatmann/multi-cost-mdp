@@ -1,0 +1,29 @@
+Storm 1.1.1 (dev)
+
+Date: Thu Oct 19 15:05:21 2017
+Command line arguments: --prism rover/unfolded_rover.prism --prop rover/unfolded_properties.props single1 -const B1=499,B2=-1,B3=900,B4=500 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 6817.109s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	180820752
+Transitions: 	339038910
+Choices: 	226025940
+Reward Models:  none
+State Labels: 	6 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * bound1 -> 180153520 item(s)
+   * bound4 -> 180381392 item(s)
+   * bound3 -> 179914704 item(s)
+   * done -> 11301297 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [F (((!("bound1") & "bound3") & "bound4") & done)] ...
+
+real	120m7.782s
+user	118m56.668s
+sys	1m4.224s

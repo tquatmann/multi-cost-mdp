@@ -1,0 +1,5 @@
+const int B1;
+const int B2;
+
+"single1": Pmin=?[F{"time"}<=B1,{"rounds"}<=B2 "done"];
+"multi1": multi(Pmin=?[F{"time"}<=B1 "done"], Pmin=? [F{"rounds"}<=B2 "done"]);

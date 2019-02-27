@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 00:23:56 2017
+Command line arguments: --prism rover/rover.prism --prop rover/properties.props single1 -const B1=499,B2=-1,B3=900,B4=500 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 0.157s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	16
+Transitions: 	30
+Choices: 	20
+Reward Models:  value, time, energy
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [true U[{"value"}>499 ,{"time"}<=900 ,{"energy"}<=500 ]done] ...
+Objective/Dimension/Epoch count is: 1/3/11301297.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 11301297.
+             overall Time: 631.412s.
+Epoch Model building Time: 146.553s.
+Epoch Model checking Time: 146.976s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 32
+  maxSolutionsStored: 1146607
+Occurring Epoch model sizes: 2 16 16 16 16 16 16 16 
+---------------------------------------------
+
+Result (for initial states): 0.9374534714
+Time for model checking: 712.704s.
+
+Performance statistics:
+  * peak memory usage: 642MB
+  * CPU time: 711.800s
+  * wallclock time: 712.869s
+
+real	11m53.356s
+user	11m52.192s
+sys	0m0.748s

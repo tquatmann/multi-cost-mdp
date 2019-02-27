@@ -1,0 +1,5 @@
+"single1": Pmax=? [F !"bound1" & !"bound2" & "bound3"];
+"multi1": multi(Pmax=? [F !"bound1" & "bound3"], Pmax=? [F !"bound2" & "bound3"]);
+"multi2": multi(Pmax=? [F !"bound1" & "bound3"], Pmax=? [F !"bound2" & "bound3"], R{"attacks"}min=? [F !"bound1" & !"bound2" & "bound3"]);
+
+

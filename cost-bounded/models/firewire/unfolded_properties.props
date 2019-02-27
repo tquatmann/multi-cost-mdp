@@ -1,0 +1,2 @@
+"single1": Pmin=?[F "bound1" & "bound2" & "done"];
+"multi1": multi(Pmin=?[F "bound1" & "done"], Pmin=? [F "bound2" & "done"]);

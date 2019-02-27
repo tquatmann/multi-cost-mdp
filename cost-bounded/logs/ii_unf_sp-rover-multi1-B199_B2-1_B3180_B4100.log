@@ -1,0 +1,64 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 00:51:49 2017
+Command line arguments: --prism rover/unfolded_rover.prism --prop rover/unfolded_properties.props multi1 -const B1=99,B2=-1,B3=180,B4=100 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 21.070s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1376208
+Transitions: 	2580390
+Choices: 	1720260
+Reward Models:  none
+State Labels: 	6 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * bound1 -> 1349280 item(s)
+   * bound4 -> 1357760 item(s)
+   * bound3 -> 1342224 item(s)
+   * done -> 86013 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [F (!("bound1") & done)], Pmax=? [F (("bound3" & "bound4") & done)]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   (  0.666667,          1) * x <= 1.53758
+   (         1,          1) * x <= 1.80944
+   (         1,          0) * x <= 1
+   (  0.623864,          1) * x <= 1.50304
+   (         1, 9.61105e-10) * x <= 1
+   (  0.824119,          1) * x <= 1.66585
+   (         0,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 8 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 1
+   (  0.627851,   0.372149) * x <= 0.929083
+   (   0.24328,    0.75672) * x <= 0.952886
+   (  0.495962,   0.504038) * x <= 0.905433
+   (       0.5,        0.5) * x <= 0.90472
+   (  0.409156,   0.590844) * x <= 0.920899
+   (  0.399277,   0.600723) * x <= 0.922685
+
+6 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.8063375541,          1 )
+   (         1,          0 )
+   (0.8067276923, 0.9997566068 )
+   (0.8146663038, 0.9944641992 )
+   (0.8164275415, 0.9930127294 )
+   (0.9999999992, 0.8094402709 )
+
+
+Time for model checking: 156.266s.
+
+Performance statistics:
+  * peak memory usage: 712MB
+  * CPU time: 176.232s
+  * wallclock time: 177.364s
+
+real	2m57.524s
+user	2m56.236s
+sys	0m1.228s

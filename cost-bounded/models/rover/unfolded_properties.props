@@ -1,0 +1,5 @@
+
+"single1": Pmax=? [F !"bound1" & "bound3" & "bound4" & done];
+
+"multi1": multi(Pmax=? [F !"bound1" & done], Pmax=? [F "bound3" & "bound4" & done]);
+"multi2": multi(Pmax=? [F !"bound1" & "bound3" & "bound4" & done], Pmax=? [F !"bound2" & "bound3" & "bound4" & done]);

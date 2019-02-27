@@ -1,0 +1,74 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 01:25:22 2017
+Command line arguments: --prism wlan/wlan3.nm --prop wlan/properties.prctl multi3 -const COL=0,B1=10000 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 2.236s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	96302
+Transitions: 	204576
+Choices: 	123730
+Reward Models:  time, collisions
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * (s1 = 12) -> 1324 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+   * init -> 1 item(s)
+   * (s2 = 12) -> 1324 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmin=? [true U{"time"}<=10000 (s1 = 12)], Pmin=? [true U{"time"}<=10000 (s2 = 12)], R[exp]{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+Objective/Dimension/Epoch count is: 3/2/202.
+WVC statistics: 
+                overall Time: 182.054s.
+---------------------------------------------
+     #checked weight vectors: 4.
+             #checked epochs: 808.
+#Sched reused from prev. ep.: 10.
+   Epoch Model building time: 12.414s.
+   Epoch Model checking time: 168.803s.
+Implicit unfolding statistics: 
+ Memory Product size: 192602
+  maxSolutionsStored: 3
+Occurring Epoch model sizes: 96301 96302 96301 96302 96301 96302 96301 96302 
+---------------------------------------------
+
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         0,          0,          1) * x <= 1.20144
+   (        -1,          0, 0.00471516) * x <= -0.993731
+   (         0,         -1, 0.00467827) * x <= -0.993775
+   (        -1,          0,          0) * x <= -0.999375
+   (  -0.11391,         -1,          0) * x <= -1.11324
+   (         0,         -1,          0) * x <= -0.999375
+   (         0,  -0.588694,          1) * x <= 0.613005
+   (        -1,  -0.114754,          0) * x <= -1.11408
+   ( -0.588894,          0,          1) * x <= 0.612805
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (        -1,          0,          0) * x <= -0.999375
+   (         0,         -1,          0) * x <= -0.999375
+   (         0,          0,          1) * x <= 1.20144
+   ( -0.490363,   -0.49055,  0.0190877) * x <= -0.957388
+
+4 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.9995724101, 0.9993747371, 1.197025393 )
+   (0.9993747371, 0.9995723348, 1.197025393 )
+   (0.9993950944, 0.9993949351, 1.20134281 )
+   (0.9995595038, 0.9995594005, 1.20143963 )
+
+
+Time for model checking: 182.317s.
+
+Performance statistics:
+  * peak memory usage: 227MB
+  * CPU time: 184.420s
+  * wallclock time: 184.604s
+
+real	3m4.760s
+user	3m4.424s
+sys	0m0.284s

@@ -1,0 +1,24 @@
+//Probability that both stations send correctly within B time units
+"single1": Pmin=? [F "bound1" & s1=12 & s2=12];
+
+// Tradeoff between
+// a) probability that both stations send correctly within B time units and
+// b) expected number of collisions until both stations send correctly
+"multi1": multi(Pmin=? [F "bound1" & s1=12 & s2=12], R{"collisions"}max=? [ F s1=12 & s2=12 ]);
+
+// Tradeoff between
+// a) probability that Station 1 sends correctly within B time units and
+// b) probability that Station 2 sends correctly within B time units
+"multi2": multi(Pmin=? [F "bound1" & s1=12], Pmin=? [F "bound1" & s2=12]);
+
+// Tradeoff between
+// a) probability that Station 1 sends correctly within B time units and
+// b) probability that Station 2 sends correctly within B time units
+// c) expected number of collisions until both stations send correctly
+"multi3": multi(Pmin=? [F "bound1" & s1=12], Pmin=? [F "bound1" & s2=12], R{"collisions"}max=? [ F s1=12 & s2=12 ]);
+
+
+// Note: In the official prism benchmark suite we have the properties:
+// * probability that both stations send correctly within B time units (wlan_dl with deadline=B1/50)
+// * expected number of collisions until both stations send correctly
+ 

@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 03:25:51 2017
+Command line arguments: --prism jobsched/unfolded_02procs.prism --prop jobsched/unfolded_properties.props multi1 -const B1=2,B2=65,B3=2,B4=130 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 5.194s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	96303
+Transitions: 	174917
+Choices: 	112066
+Reward Models:  none
+State Labels: 	6 labels
+   * deadlock -> 0 item(s)
+   * bound1 -> 90195 item(s)
+   * bound4 -> 88853 item(s)
+   * init -> 1 item(s)
+   * bound2 -> 88977 item(s)
+   * bound3 -> 12547 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [F (!("bound1") & "bound2")], Pmax=? [F (!("bound3") & "bound4")]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 203/243
+   (         0,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 203/243
+   (         0,          1) * x <= 1
+
+1 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (   203/243,          1 )
+
+
+Time for model checking: 10.162s.
+
+Performance statistics:
+  * peak memory usage: 385MB
+  * CPU time: 13.636s
+  * wallclock time: 15.438s
+
+real	0m15.547s
+user	0m13.652s
+sys	0m1.808s

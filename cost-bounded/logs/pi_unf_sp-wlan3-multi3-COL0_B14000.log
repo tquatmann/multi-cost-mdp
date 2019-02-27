@@ -1,0 +1,29 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 06:39:10 2017
+Command line arguments: --prism wlan/unfolded_wlan3.nm --prop wlan/unfolded_properties.prctl multi3 -const COL=0,B1=4000 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 120.704s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3129139
+Transitions: 	6578533
+Choices: 	4001675
+Reward Models:  collisions
+State Labels: 	6 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 63 item(s)
+   * bound1 -> 3041883 item(s)
+   * (s1 = 12) -> 43128 item(s)
+   * (s2 = 12) -> 43128 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmin=? [F ("bound1" & (s1 = 12))], Pmin=? [F ("bound1" & (s2 = 12))], R[exp]{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+
+real	120m1.336s
+user	106m50.880s
+sys	12m55.984s

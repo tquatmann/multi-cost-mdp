@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 02:26:45 2017
+Command line arguments: --prism uav/uav.prism --prop uav/properties.props single1 -const COUNTER=0,B1=500 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 0.420s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	9695
+Transitions: 	59868
+Choices: 	19222
+Reward Models:  time
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((w1 & w2) & w6) -> 6414 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [true U{"time"}<=500 ((w1 & w2) & w6)] ...
+Objective/Dimension/Epoch count is: 1/1/52.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 52.
+             overall Time: 0.757s.
+Epoch Model building Time: 0.374s.
+Epoch Model checking Time: 0.382s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 12975
+  maxSolutionsStored: 6
+Occurring Epoch model sizes: 3688 9695 
+---------------------------------------------
+
+Result (for initial states): 0.9727105696
+Time for model checking: 0.851s.
+
+Performance statistics:
+  * peak memory usage: 220MB
+  * CPU time: 1.228s
+  * wallclock time: 1.298s
+
+real	0m1.385s
+user	0m1.236s
+sys	0m0.128s

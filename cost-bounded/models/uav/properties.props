@@ -1,0 +1,5 @@
+const int B1;
+// Reach waypoints w1,w2,w6 in B1 time vs. ROZ
+"single1": Pmax=? [ F{"time"}<=B1  w1 & w2 & w6 ];
+
+"multi1": multi(Pmax=? [ F{"time"}<=B1  w1 & w2 & w6 ], R{"ROZ"}min=? [ C{"time"}<=B1]);

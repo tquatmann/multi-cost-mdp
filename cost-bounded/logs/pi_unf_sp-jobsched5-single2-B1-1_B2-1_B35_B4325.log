@@ -1,0 +1,10 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 13:17:03 2017
+Command line arguments: --prism jobsched/unfolded_05procs.prism --prop jobsched/unfolded_properties.props single2 -const B1=-1,B2=-1,B3=5,B4=325 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb24
+
+
+real	120m2.587s
+user	119m29.968s
+sys	0m27.652s

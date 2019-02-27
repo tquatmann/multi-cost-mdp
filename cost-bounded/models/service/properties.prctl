@@ -1,0 +1,4 @@
+const int B1;
+
+"single1": Pmax=? [F{"time"}<=B1 "taskdone"];
+"multi1": multi(Pmax=? [F{"time"}<=B1 "taskdone"], R{"interaction"}max=? [C{"time"}<=B1 ]);

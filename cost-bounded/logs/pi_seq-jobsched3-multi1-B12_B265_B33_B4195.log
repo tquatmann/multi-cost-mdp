@@ -1,0 +1,26 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 13:32:38 2017
+Command line arguments: --prism jobsched/03procs.prism --prop jobsched/properties.props multi1 -const B1=2,B2=65,B3=3,B4=195 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.523s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	4584
+Transitions: 	10376
+Choices: 	5623
+Reward Models:  utilityGlobal, utilityLocal, energyLocal, energyGlobal
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [true U[{"utilityLocal"}>2 ,{"energyLocal"}<=65 ]true], Pmax=? [true U[{"utilityGlobal"}>3 ,{"energyGlobal"}<=195 ]true]) ...
+Objective/Dimension/Epoch count is: 2/4/112969.
+
+real	120m9.538s
+user	118m12.992s
+sys	1m53.268s

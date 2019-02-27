@@ -1,0 +1,34 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 13:17:03 2017
+Command line arguments: --prism jobsched/unfolded_02procs.prism --prop jobsched/unfolded_properties.props single2 -const B1=-1,B2=-1,B3=2,B4=130 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb24
+
+Time for model construction: 0.609s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	19637
+Transitions: 	36586
+Choices: 	22871
+Reward Models:  none
+State Labels: 	4 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+   * bound4 -> 19359 item(s)
+   * bound3 -> 8445 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [F (!("bound3") & "bound4")] ...
+Result (for initial states): 1
+Time for model checking: 0.015s.
+
+Performance statistics:
+  * peak memory usage: 220MB
+  * CPU time: 0.580s
+  * wallclock time: 0.636s
+
+real	0m0.722s
+user	0m0.588s
+sys	0m0.116s

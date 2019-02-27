@@ -1,0 +1,33 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 10:43:57 2017
+Command line arguments: --prism uav/unfolded_uav.prism --prop uav/unfolded_properties.props single1 -const COUNTER=0,B1=1000 -e dd --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.933s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (symbolic)
+States: 	399246 (1762 nodes)
+Transitions: 	2400514 (17845 nodes)
+Choices: 	759567
+Reward Models:  none
+Variables: 	rows: 17 meta variables (43 DD variables), columns: 17 meta variables (43 DD variables), nondeterminism: 8 meta variables (8 DD variables)
+Labels: 	3
+   * deadlock -> 0 state(s) (1 nodes)
+   * init -> 1 state(s) (44 nodes)
+   * bound1
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [F ("bound1" & ((w1 & w2) & w6))] ...
+Result (for initial states): 0.9999898719
+Time for model checking: 5.421s.
+
+Performance statistics:
+  * peak memory usage: 100MB
+  * CPU time: 6.544s
+  * wallclock time: 6.500s
+
+real	0m6.647s
+user	0m6.552s
+sys	0m0.076s

@@ -1,0 +1,47 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 02:54:47 2017
+Command line arguments: --prism firewire/unfolded_firewire.prism --prop firewire/unfolded_properties.props multi1 -const delay=36,B1=10000,B2=10 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 128.414s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	11816092
+Transitions: 	21517975
+Choices: 	18119081
+Reward Models:  none
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * bound1 -> 11815316 item(s)
+   * bound2 -> 4696221 item(s)
+   * init -> 1 item(s)
+   * done -> 16556 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmin=? [F ("bound1" & "done")], Pmin=? [F ("bound2" & "done")]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -1
+   (         0,         -1) * x <= -0.999023
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -1
+   (         0,         -1) * x <= -0.999023
+
+1 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (         1, 0.9990234375 )
+
+
+Time for model checking: 734.895s.
+
+Performance statistics:
+  * peak memory usage: 5468MB
+  * CPU time: 853.372s
+  * wallclock time: 863.387s
+
+real	14m23.544s
+user	14m13.380s
+sys	0m10.040s

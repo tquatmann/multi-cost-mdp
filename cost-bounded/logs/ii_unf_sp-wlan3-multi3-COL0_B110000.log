@@ -1,0 +1,60 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 02:55:23 2017
+Command line arguments: --prism wlan/unfolded_wlan3.nm --prop wlan/unfolded_properties.prctl multi3 -const COL=0,B1=10000 -e sparse --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 283.484s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	13178684
+Transitions: 	28242098
+Choices: 	16870140
+Reward Models:  collisions
+State Labels: 	6 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 183 item(s)
+   * bound1 -> 13095601 item(s)
+   * (s1 = 12) -> 158325 item(s)
+   * (s2 = 12) -> 158325 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmin=? [F ("bound1" & (s1 = 12))], Pmin=? [F ("bound1" & (s2 = 12))], R[exp]{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         0,          0,          1) * x <= 1.20144
+   (        -1,          0, 0.00467757) * x <= -0.993776
+   (        -1,          0,   0.631931) * x <= -0.240236
+   ( -0.159432,         -1,          0) * x <= -1.15873
+   (         0,         -1,          0) * x <= -0.999375
+   (         0,         -1,   0.546189) * x <= -0.343242
+   (        -1,  -0.159457,          0) * x <= -1.15876
+   (         0,         -1, 0.00467726) * x <= -0.993776
+   (        -1,          0,          0) * x <= -0.999375
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (        -1,          0,          0) * x <= -0.999375
+   (         0,         -1,          0) * x <= -0.999375
+   (         0,          0,          1) * x <= 1.20144
+   (  -0.49872,  -0.498797, 0.00248214) * x <= -0.993932
+
+4 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.9995213017, 0.9993747368, 1.19702186 )
+   (0.999374737, 0.9995212805, 1.197022188 )
+   (0.9993948908, 0.9993948908, 1.201330786 )
+   (0.9994636731, 0.9994543405, 1.20143963 )
+
+
+Time for model checking: 1485.140s.
+
+Performance statistics:
+  * peak memory usage: 6524MB
+  * CPU time: 1741.432s
+  * wallclock time: 1768.955s
+
+real	29m29.044s
+user	29m1.440s
+sys	0m25.704s

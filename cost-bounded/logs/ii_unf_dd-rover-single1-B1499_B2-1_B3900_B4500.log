@@ -1,0 +1,30 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 00:54:46 2017
+Command line arguments: --prism rover/unfolded_rover.prism --prop rover/unfolded_properties.props single1 -const B1=499,B2=-1,B3=900,B4=500 -e dd --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 16.968s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (symbolic)
+States: 	180820752 (45828 nodes)
+Transitions: 	339038910 (1311048 nodes)
+Choices: 	226025940
+Reward Models:  none
+Variables: 	rows: 8 meta variables (35 DD variables), columns: 8 meta variables (35 DD variables), nondeterminism: 6 meta variables (6 DD variables)
+Labels: 	7
+   * deadlock -> 0 state(s) (1 nodes)
+   * init -> 1 state(s) (36 nodes)
+   * bound1
+   * bound2
+   * bound3
+   * bound4
+   * goal
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [F (((!("bound1") & "bound3") & "bound4") & done)] ...
+
+real	120m0.178s
+user	119m39.624s
+sys	0m4.104s

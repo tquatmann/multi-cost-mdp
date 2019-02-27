@@ -1,0 +1,35 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 09:12:25 2017
+Command line arguments: --prism firewire/unfolded_firewire.prism --prop firewire/unfolded_properties.props single1 -const delay=36,B1=10000,B2=10 -e dd --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 137.975s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (symbolic)
+States: 	11816092 (13053 nodes)
+Transitions: 	21517975 (62681 nodes)
+Choices: 	18119081
+Reward Models:  none
+Variables: 	rows: 4 meta variables (30 DD variables), columns: 4 meta variables (30 DD variables), nondeterminism: 3 meta variables (3 DD variables)
+Labels: 	5
+   * deadlock -> 0 state(s) (1 nodes)
+   * init -> 1 state(s) (31 nodes)
+   * bound1
+   * bound2
+   * done
+-------------------------------------------------------------- 
+
+Model checking property Pmin=? [F (("bound1" & "bound2") & "done")] ...
+Result (for initial states): 0.9990234375
+Time for model checking: 26.725s.
+
+Performance statistics:
+  * peak memory usage: 272MB
+  * CPU time: 164.488s
+  * wallclock time: 164.750s
+
+real	2m44.825s
+user	2m44.496s
+sys	0m0.284s

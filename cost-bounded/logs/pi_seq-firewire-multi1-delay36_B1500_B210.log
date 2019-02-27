@@ -1,0 +1,61 @@
+Storm 1.1.1 (dev)
+
+Date: Thu Oct 19 22:38:26 2017
+Command line arguments: --prism firewire/firewire.prism --prop firewire/properties.props multi1 -const delay=36,B1=500,B2=10 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.260s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	776
+Transitions: 	1411
+Choices: 	1189
+Reward Models:  time, rounds
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmin=? [true U{"time"}<=500 "done"], Pmin=? [true U{"rounds"}<=10 "done"]) ...
+Objective/Dimension/Epoch count is: 2/2/6024.
+WVC statistics: 
+                overall Time: 1158.357s.
+---------------------------------------------
+     #checked weight vectors: 3.
+             #checked epochs: 18072.
+#Sched reused from prev. ep.: 18052.
+   Epoch Model building time: 50.393s.
+   Epoch Model checking time: 1107.671s.
+Implicit unfolding statistics: 
+ Memory Product size: 3101
+  maxSolutionsStored: 1023
+Occurring Epoch model sizes: 776 776 776 776 776 776 776 776 776 776 776 776 
+---------------------------------------------
+
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         0,         -1) * x <= -1023/1024
+   (        -1,          0) * x <= -25/32
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (        -1,          0) * x <= -25/32
+   (         0,         -1) * x <= -1023/1024
+   (     -1/73,     -72/73) * x <= -9307/9344
+
+1 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (     25/32,  1023/1024 )
+
+
+Time for model checking: 1158.622s.
+
+Performance statistics:
+  * peak memory usage: 297MB
+  * CPU time: 1147.980s
+  * wallclock time: 1158.902s
+
+real	19m19.074s
+user	19m7.988s
+sys	0m10.872s

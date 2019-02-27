@@ -1,0 +1,119 @@
+// Simplified model of a mars rover
+// Encoding by Tim Quatmann and Sebastian Junges
+// RWTH Aachen University
+
+mdp
+
+
+const int num_tasks = 4;
+
+// time (in minutes)
+const int time_low = 5;
+const int time_medium = 8;
+const int time_high = 10;
+
+// Energy (in percent)
+const int energy_low = 3;
+const int energy_medium = 5;
+const int energy_high = 7; 
+
+// Scientific Value
+const int value_low = 2;
+const int value_medium = 10;
+const int value_high = 30;
+
+// Success probabilities
+const double task1_success_pr = 0.5;
+const double task2_success_pr = 0.6;
+const double task3_success_pr = 0.8;
+const double task4_success_pr = 0.2;
+
+formula low_time_task = (task=2 | task=3);
+formula medium_time_task = false;
+formula high_time_task = (task=1 | task=4);
+
+formula low_energy_task = (task=1 | task=3);
+formula medium_energy_task = (task=2);
+formula high_energy_task = (task=4);
+
+formula low_value_task = (task=3);
+formula medium_value_task = (task=1 | task=2);
+formula high_value_task = (task=4);
+
+module rover
+	// The current task (0 means no task)
+	task : [0..num_tasks] init 0;
+	success : bool init false;
+	done : bool init false;
+	
+	[task1_start] task=0 & !done -> task1_success_pr : (task'=1) & (success'=true) + (1-task1_success_pr) : (task'=1) & (success'=false);
+	[task2_start] task=0 & !done -> task2_success_pr : (task'=2) & (success'=true) + (1-task2_success_pr) : (task'=2) & (success'=false);
+	[task3_start] task=0 & !done -> task3_success_pr : (task'=3) & (success'=true) + (1-task3_success_pr) : (task'=3) & (success'=false);
+	[task4_start] task=0 & !done -> task4_success_pr : (task'=4) & (success'=true) + (1-task4_success_pr) : (task'=4) & (success'=false);
+
+	[task_done] task>0 & !done -> (task'= 0) & (success'=false);
+	
+	[rover_done] task=0 -> (done' = true); 
+endmodule
+
+
+
+module battery
+	increased_energy : bool init false;
+	
+	[task1_start] true -> 0.5 : (increased_energy' = false) + (0.5) : (increased_energy' = true);
+	[task2_start] true -> 0.5 : (increased_energy' = false) + (0.5) : (increased_energy' = true);
+	[task3_start] true -> 0.5 : (increased_energy' = false) + (0.5) : (increased_energy' = true);
+	[task4_start] true -> (increased_energy' = false);
+	[task_done] true -> (increased_energy' = false);
+endmodule
+ 
+
+const int B1;
+module value_counting_module
+	counter1 : [0..B1+1] init B1+1;
+	[task_done] low_value_task -> (counter1'=max(0,counter1 - (success ? value_low : 0)));
+	[task_done] medium_value_task -> (counter1'=max(0,counter1 - (success ? value_medium : 0)));
+	[task_done] high_value_task -> (counter1'=max(0,counter1 - (success ? value_high : 0)));
+endmodule
+
+const int B2;
+module value2_counting_module
+	counter2 : [0..B2+1] init B2+1;
+	[task_done] low_value_task -> (counter2'=max(0,counter2 - (success ? value_low : 0)));
+	[task_done] medium_value_task -> (counter2'=max(0,counter2 - (success ? value_medium : 0)));
+	[task_done] high_value_task -> (counter2'=max(0,counter2 - (success ? value_high : 0)));
+endmodule
+
+const int B3;
+module time_counting_module
+	counter3 : [0..B3+1] init B3+1;
+	[task_done] low_time_task -> (counter3'=max(0, counter3-time_low));
+	[task_done] medium_time_task -> (counter3'=max(0, counter3-time_medium));
+	[task_done] high_time_task -> (counter3'=max(0, counter3-time_high));
+endmodule
+
+const int B4;
+module energy_counting_module
+	counter4 : [0..B4+1] init B4+1;
+	[task_done] low_energy_task & !increased_energy -> (counter4'=max(0, counter4-energy_low));
+	[task_done] low_energy_task &  increased_energy -> (counter4'=max(0, counter4-energy_medium));
+	[task_done] medium_energy_task & !increased_energy -> (counter4'=max(0, counter4-energy_medium));
+	[task_done] medium_energy_task &  increased_energy -> (counter4'=max(0, counter4-energy_high));
+	[task_done] high_energy_task & !increased_energy -> (counter4'=max(0, counter4-energy_high));
+	[task_done] high_energy_task &  increased_energy -> (counter4'=max(0, counter4-energy_high));
+endmodule
+
+
+label "bound1" = counter1>0;
+label "bound2" = counter2>0;
+label "bound3" = counter3>0;
+label "bound4" = counter4>0;
+
+label "goal" = counter1=0 & counter3=1 & counter4=1 & done;
+
+rewards "value"
+	[task_done] low_value_task & success : value_low;
+	[task_done] medium_value_task & success : value_medium;
+	[task_done] high_value_task & success : value_high;
+endrewards

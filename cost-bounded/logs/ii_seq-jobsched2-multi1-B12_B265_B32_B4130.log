@@ -1,0 +1,59 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 01:28:27 2017
+Command line arguments: --prism jobsched/02procs.prism --prop jobsched/properties.props multi1 -const B1=2,B2=65,B3=2,B4=130 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.415s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	349
+Transitions: 	660
+Choices: 	411
+Reward Models:  utilityGlobal, utilityLocal, energyLocal, energyGlobal
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [true U[{"utilityLocal"}>2 ,{"energyLocal"}<=65 ]true], Pmax=? [true U[{"utilityGlobal"}>2 ,{"energyGlobal"}<=130 ]true]) ...
+Objective/Dimension/Epoch count is: 2/4/48283.
+WVC statistics: 
+                overall Time: 53.168s.
+---------------------------------------------
+     #checked weight vectors: 2.
+             #checked epochs: 96566.
+#Sched reused from prev. ep.: 96560.
+   Epoch Model building time: 41.085s.
+   Epoch Model checking time: 8.858s.
+Implicit unfolding statistics: 
+ Memory Product size: 1394
+  maxSolutionsStored: 45283
+Occurring Epoch model sizes: 85 348 348 348 304 348 348 348 348 304 348 349 85 348 348 348 304 348 348 348 348 304 348 349 
+---------------------------------------------
+
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 0.835391
+   (         0,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 0.835391
+   (         0,          1) * x <= 1
+
+1 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.8353909465,          1 )
+
+
+Time for model checking: 53.916s.
+
+Performance statistics:
+  * peak memory usage: 847MB
+  * CPU time: 53.728s
+  * wallclock time: 54.380s
+
+real	0m54.576s
+user	0m53.736s
+sys	0m0.792s

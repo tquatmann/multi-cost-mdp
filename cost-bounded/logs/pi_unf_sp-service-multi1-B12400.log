@@ -1,0 +1,27 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 04:55:05 2017
+Command line arguments: --prism service/unfolded_service.prism --prop service/unfolded_properties.prctl multi1 -const B1=2400 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 235.483s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	5582812
+Transitions: 	12140835
+Choices: 	10898089
+Reward Models:  interaction
+State Labels: 	4 labels
+   * init -> 1 item(s)
+   * taskdone -> 189759 item(s)
+   * deadlock -> 0 item(s)
+   * bound1 -> 5506012 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [F ("bound1" & "taskdone")], R[exp]{"interaction"}max=? [F !("bound1")]) ...
+
+real	120m6.394s
+user	112m12.240s
+sys	7m52.816s

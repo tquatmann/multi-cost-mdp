@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 00:24:28 2017
+Command line arguments: --prism wlan/wlan6.nm --prop wlan/properties.prctl single1 -const COL=0,B1=4000 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 105.842s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	5007548
+Transitions: 	11475748
+Choices: 	6350470
+Reward Models:  time
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmin=? [true U{"time"}<=4000 ((s1 = 12) & (s2 = 12))] ...
+Objective/Dimension/Epoch count is: 1/1/82.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 82.
+             overall Time: 852.188s.
+Epoch Model building Time: 50.921s.
+Epoch Model checking Time: 801.266s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 10015094
+  maxSolutionsStored: 1
+Occurring Epoch model sizes: 5007547 5007548 
+---------------------------------------------
+
+Result (for initial states): 0.81640625
+Time for model checking: 883.049s.
+
+Performance statistics:
+  * peak memory usage: 3710MB
+  * CPU time: 983.956s
+  * wallclock time: 989.024s
+
+real	16m29.141s
+user	16m23.960s
+sys	0m4.044s

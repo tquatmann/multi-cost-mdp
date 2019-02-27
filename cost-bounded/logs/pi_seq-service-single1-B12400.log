@@ -1,0 +1,48 @@
+Storm 1.1.1 (dev)
+
+Date: Thu Oct 19 22:38:29 2017
+Command line arguments: --prism service/service.prism --prop service/properties.prctl single1 -const B1=2400 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 3.095s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	76800
+Transitions: 	165376
+Choices: 	148736
+Reward Models:  time
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * taskdone -> 3200 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [true U{"time"}<=2400 "taskdone"] ...
+Objective/Dimension/Epoch count is: 1/1/162.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 162.
+             overall Time: 43.879s.
+Epoch Model building Time: 29.456s.
+Epoch Model checking Time: 14.422s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 150400
+  maxSolutionsStored: 15
+Occurring Epoch model sizes: 1888 83200 
+---------------------------------------------
+
+Result (for initial states): 150824816914729/151336128515625 (approx. 0.9966213514)
+Time for model checking: 44.996s.
+
+Performance statistics:
+  * peak memory usage: 310MB
+  * CPU time: 47.936s
+  * wallclock time: 48.220s
+
+real	0m48.398s
+user	0m47.956s
+sys	0m0.416s

@@ -1,0 +1,33 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 04:34:36 2017
+Command line arguments: --prism wlan/unfolded_wlan6.nm --prop wlan/unfolded_properties.prctl single1 -const COL=0,B1=4000 -e dd --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 5.741s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (symbolic)
+States: 	15129967 (28199 nodes)
+Transitions: 	33629043 (116455 nodes)
+Choices: 	18983899
+Reward Models:  none
+Variables: 	rows: 14 meta variables (59 DD variables), columns: 14 meta variables (59 DD variables), nondeterminism: 7 meta variables (7 DD variables)
+Labels: 	3
+   * deadlock -> 0 state(s) (1 nodes)
+   * init -> 1 state(s) (60 nodes)
+   * bound1
+-------------------------------------------------------------- 
+
+Model checking property Pmin=? [F ("bound1" & ((s1 = 12) & (s2 = 12)))] ...
+Result (for initial states): 0.81640625
+Time for model checking: 5.521s.
+
+Performance statistics:
+  * peak memory usage: 226MB
+  * CPU time: 11.888s
+  * wallclock time: 11.922s
+
+real	0m12.070s
+user	0m11.896s
+sys	0m0.144s

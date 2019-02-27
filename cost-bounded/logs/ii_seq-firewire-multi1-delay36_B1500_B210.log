@@ -1,0 +1,61 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 00:22:08 2017
+Command line arguments: --prism firewire/firewire.prism --prop firewire/properties.props multi1 -const delay=36,B1=500,B2=10 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 0.177s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	776
+Transitions: 	1411
+Choices: 	1189
+Reward Models:  time, rounds
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmin=? [true U{"time"}<=500 "done"], Pmin=? [true U{"rounds"}<=10 "done"]) ...
+Objective/Dimension/Epoch count is: 2/2/6024.
+WVC statistics: 
+                overall Time: 16.767s.
+---------------------------------------------
+     #checked weight vectors: 3.
+             #checked epochs: 18072.
+#Sched reused from prev. ep.: 12516.
+   Epoch Model building time: 5.482s.
+   Epoch Model checking time: 11.164s.
+Implicit unfolding statistics: 
+ Memory Product size: 3101
+  maxSolutionsStored: 1023
+Occurring Epoch model sizes: 776 776 776 776 776 776 776 776 776 776 776 776 
+---------------------------------------------
+
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         0,         -1) * x <= -0.999023
+   (        -1,          0) * x <= -0.78125
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (        -1,          0) * x <= -0.78125
+   (         0,         -1) * x <= -0.999023
+   (-0.0136986,  -0.986301) * x <= -0.99604
+
+1 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (   0.78125, 0.9990234375 )
+
+
+Time for model checking: 16.796s.
+
+Performance statistics:
+  * peak memory usage: 218MB
+  * CPU time: 16.888s
+  * wallclock time: 16.986s
+
+real	0m17.073s
+user	0m16.892s
+sys	0m0.152s

@@ -1,0 +1,47 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 00:58:01 2017
+Command line arguments: --prism jobsched/02procs.prism --prop jobsched/properties.props single2 -const B1=2,B2=65,B3=2,B4=130 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 0.167s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	349
+Transitions: 	660
+Choices: 	411
+Reward Models:  utilityGlobal, energyGlobal
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [true U[{"utilityGlobal"}>2 ,{"energyGlobal"}<=130 ]true] ...
+Objective/Dimension/Epoch count is: 1/2/503.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 503.
+             overall Time: 0.471s.
+Epoch Model building Time: 0.293s.
+Epoch Model checking Time: 0.174s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 698
+  maxSolutionsStored: 164
+Occurring Epoch model sizes: 85 304 348 349 
+---------------------------------------------
+
+Result (for initial states): 1 (approx. 1)
+Time for model checking: 0.484s.
+
+Performance statistics:
+  * peak memory usage: 219MB
+  * CPU time: 0.628s
+  * wallclock time: 0.664s
+
+real	0m0.750s
+user	0m0.632s
+sys	0m0.100s

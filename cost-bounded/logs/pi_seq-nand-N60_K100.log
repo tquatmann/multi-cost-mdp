@@ -1,0 +1,27 @@
+Storm 1.3.1 (dev)
+
+Date: Tue Feb  5 23:41:57 2019
+Command line arguments: --prism nand/nand.prism --prop nand/nand.props --constants 'N=60,K=100' --exact --statistics --timemem
+Current working directory: /home/tim.quatmann/reward-bounded-dtmc/benchmarks
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 45.409s.
+
+-------------------------------------------------------------- 
+Model type: 	DTMC (sparse)
+States: 	2366116
+Transitions: 	3745591
+Reward Models:  u
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((c = 60) & ((z / 60) < 1/10)) -> 12 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "reliable": P=? [true U^{rew{"u"}>=(((2 * 100) + 1) - 1) , rew{"u"}<=(((2 * 100) + 1) - 1) }((c = 60) & ((z / 60) < 1/10))] ...
+
+real	120m0.527s
+user	119m33.812s
+sys	0m23.009s

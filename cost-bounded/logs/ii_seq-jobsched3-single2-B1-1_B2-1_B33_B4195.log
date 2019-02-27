@@ -1,0 +1,47 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 00:22:23 2017
+Command line arguments: --prism jobsched/03procs.prism --prop jobsched/properties.props single2 -const B1=2,B2=65,B3=3,B4=195 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 0.263s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	4584
+Transitions: 	10376
+Choices: 	5623
+Reward Models:  utilityGlobal, energyGlobal
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property Pmax=? [true U[{"utilityGlobal"}>3 ,{"energyGlobal"}<=195 ]true] ...
+Objective/Dimension/Epoch count is: 1/2/922.
+---------------------------------
+Statistics:
+---------------------------------
+          #checked epochs: 922.
+             overall Time: 3.460s.
+Epoch Model building Time: 3.053s.
+Epoch Model checking Time: 0.391s.
+---------------------------------
+Implicit unfolding statistics: 
+ Memory Product size: 9168
+  maxSolutionsStored: 282
+Occurring Epoch model sizes: 897 4383 4583 4584 
+---------------------------------------------
+
+Result (for initial states): 0.7515033027
+Time for model checking: 3.531s.
+
+Performance statistics:
+  * peak memory usage: 219MB
+  * CPU time: 3.756s
+  * wallclock time: 3.810s
+
+real	0m3.894s
+user	0m3.760s
+sys	0m0.116s

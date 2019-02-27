@@ -1,0 +1,14 @@
+
+"single1": Pmax=? [F !"bound1" & "bound2" ];
+// Note: Equivalent to 'Pmax=? [ F{reward{"utilityLocal"}>B1} !"emptyBattery" ] on original_files/maximalUtility/0Nprocs.prism
+// Also note that the original query considers the "emptyBattery"-labeled states as goal states (no negation).
+// This means that that more energy can be consumed: If the battery load is l then we can still do one transition with energy e>l.
+
+
+"single2": Pmax=? [F !"bound3" & "bound4" ];
+// Note: Equivalent to 'Pmax=? [F{reward{"energyGlobal"}<=B4} success]' on original_files/minimalEnergy/0Nprocs.prism
+
+"single3": Pmax=? [F !"bound1" & "bound2" & !"bound3" & "bound4" ];
+
+"multi1": multi(Pmax=? [F !"bound1" & "bound2" ], Pmax=? [F !"bound3" & "bound4" ]);
+

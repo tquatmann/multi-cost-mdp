@@ -1,0 +1,29 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 00:22:30 2017
+Command line arguments: --prism wlan/wlan3.nm --prop wlan/properties.prctl multi3 -const COL=0,B1=4000 --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+Time for model construction: 3.905s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	96302
+Transitions: 	204576
+Choices: 	123730
+Reward Models:  time, collisions
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * (s1 = 12) -> 1324 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+   * init -> 1 item(s)
+   * (s2 = 12) -> 1324 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmin=? [true U{"time"}<=4000 (s1 = 12)], Pmin=? [true U{"time"}<=4000 (s2 = 12)], R[exp]{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+Objective/Dimension/Epoch count is: 3/2/82.
+
+real	120m0.099s
+user	105m5.032s
+sys	14m39.900s

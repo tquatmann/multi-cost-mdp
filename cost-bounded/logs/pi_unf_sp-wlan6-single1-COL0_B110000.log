@@ -1,0 +1,10 @@
+Storm 1.1.1 (dev)
+
+Date: Wed Oct 18 19:22:26 2017
+Command line arguments: --prism wlan/unfolded_wlan6.nm --prop wlan/unfolded_properties.prctl single1 -const COL=0,B1=10000 -e sparse --exact --minmax:method pi -tm 
+Current working directory: /home/tim.quatmann/rewb21
+
+
+real	120m6.193s
+user	118m55.060s
+sys	1m6.100s

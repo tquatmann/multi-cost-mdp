@@ -1,0 +1,3 @@
+
+"single1": Pmax=? [F "bound1" & "taskdone"];
+"multi1": multi(Pmax=? [F "bound1" & "taskdone"], R{"interaction"}max=? [F !"bound1"]);

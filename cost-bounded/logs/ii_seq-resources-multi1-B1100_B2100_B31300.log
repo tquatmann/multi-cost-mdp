@@ -1,0 +1,26 @@
+Storm 1.1.1 (dev)
+
+Date: Fri Oct 20 01:26:49 2017
+Command line arguments: --prism resources/resources5_5.prism --prop resources/properties.prctl multi1 -const B1=100,B2=100,B3=1300 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.346s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	94
+Transitions: 	326
+Choices: 	302
+Reward Models:  steps, gold, gem
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [true U[{"gold"}>100 ,{"steps"}<=1300 ]true], Pmax=? [true U[{"gem"}>100 ,{"steps"}<=1300 ]true]) ...
+Objective/Dimension/Epoch count is: 2/4/12843755.
+
+real	120m0.201s
+user	119m55.956s
+sys	0m3.080s

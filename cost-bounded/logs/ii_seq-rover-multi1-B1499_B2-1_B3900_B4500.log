@@ -1,0 +1,75 @@
+Storm 1.1.1 (dev)
+
+Date: Thu Oct 19 22:39:18 2017
+Command line arguments: --prism rover/rover.prism --prop rover/properties.props multi1 -const B1=499,B2=-1,B3=900,B4=500 --sound --eqsolver native --native:method power -tm 
+Current working directory: /home/tim.quatmann/rewb23
+
+Time for model construction: 0.254s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	16
+Transitions: 	30
+Choices: 	20
+Reward Models:  value, time, energy
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [true U{"value"}>499 done], Pmax=? [true U[{"time"}<=900 ,{"energy"}<=500 ]done]) ...
+Objective/Dimension/Epoch count is: 2/3/11301297.
+WVC statistics: 
+                overall Time: 5783.441s.
+---------------------------------------------
+     #checked weight vectors: 7.
+             #checked epochs: 79109079.
+#Sched reused from prev. ep.: 72744252.
+   Epoch Model building time: 1452.783s.
+   Epoch Model checking time: 1720.880s.
+Implicit unfolding statistics: 
+ Memory Product size: 32
+  maxSolutionsStored: 1781808
+Occurring Epoch model sizes: 2 16 16 16 16 16 16 16 2 16 16 16 16 16 16 16 2 16 16 16 16 16 16 16 2 16 16 16 16 16 16 16 2 16 16 16 16 16 16 16 2 16 16 16 16 16 16 16 2 16 16 16 16 16 16 16 
+---------------------------------------------
+
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   (  0.821513,          1) * x <= 1.76988
+   (  0.664751,          1) * x <= 1.62276
+   (         1,          1) * x <= 1.93745
+   (         1,          1) * x <= 1.93745
+   (         1,          0) * x <= 1
+   (         1, 4.80222e-11) * x <= 1
+   (         0,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 1
+   (  0.546871,   0.453129) * x <= 0.971658
+   ( 0.0701879,   0.929812) * x <= 0.995566
+   (  0.497535,   0.502465) * x <= 0.968874
+   (       0.5,        0.5) * x <= 0.968727
+   (  0.409082,   0.590918) * x <= 0.974187
+
+6 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (         1, 0.9374534714 )
+   (0.9384942403, 0.9988960887 )
+   (0.9388480053, 0.998605466 )
+   (0.936833601,          1 )
+   (         1, 2.28585919e-18 )
+   (0.99077249, 0.9466809813 )
+
+
+Time for model checking: 5784.305s.
+
+Performance statistics:
+  * peak memory usage: 843MB
+  * CPU time: 5779.888s
+  * wallclock time: 5784.579s
+
+real	96m26.011s
+user	96m21.156s
+sys	0m3.828s
