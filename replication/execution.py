@@ -67,16 +67,18 @@ if __name__ == "__main__":
         storm_executable = storm_executable_default
 
     storm_executable = os.path.expanduser(storm_executable)
-    print("Checking binary.")
     if not os.path.exists(storm_executable):
-        raise AssertionError("File '{}' does not exist.".format(storm_executable))
-
-    test_out, test_time, test_code = execute_command_line(storm_executable, 10)
-    if test_code != 0:
-        raise AssertionError("Could not execute binary {}".format(storm_executable))
-    print("\tDone.")
-    
-    
+        input("File '{}' does not exist. Press Return to continue or CTRL+C to abort.".format(storm_executable))
+    else:
+        try:
+            test_out, test_time, test_code = execute_command_line(storm_executable, 10)
+            if test_code != 0:
+                input("Error while executing binary '{}'. Non-zero return code: '{}'. Press Return to continue or CTRL+C to abort.".format(storm_executable,test_code))
+        except KeyboardInterrupt:
+            pass
+        except Exception:
+            input("Could not execute binary '{}'. Press Return to continue or CTRL+C to abort.".format(storm_executable))
+     
     selected_benchmarks = OrderedDict()
     done = False
     num_selected = 0
@@ -91,12 +93,12 @@ if __name__ == "__main__":
                 available_options[str(i)] = commandset
                 i += 1
                 sum_b += len(commands[commandset])
-        print("\t[{}]\t{} ({} commands)".format(i, "all" + " "*27, sum_b))
-        available_options[str(i)] = "all"
+        print("\t[a]\t{} ({} commands)".format("all" + " "*27, sum_b))
+        available_options["a"] = "all"
         available_options["d"] = "done"
         option = ""
         while option not in available_options:
-            option = input("Enter number (1 to {}) or 'd' if you are done: ".format(i))
+            option = input("Enter number (1 to {}), 'a', or 'd' in case you are done: ".format(i-1))
         if available_options[option] == "all":
             selected_benchmarks = commands
             num_selected += sum_b
@@ -119,9 +121,13 @@ if __name__ == "__main__":
     if not os.path.exists(logdir):
         os.makedirs(logdir)
         
-    print ("Execution of {} benchmarks with {} seconds time limit starts in 5 seconds. Press Ctrl+C to cancel.".format(num_selected, timelimit))
-    time.sleep(5)
-    
+    done = False
+    print("Selected {} benchmarks with a time limit of {} seconds.".format(num_selected,timelimit))
+    while not done:
+        processing_option = input("Press return to start or type 'c' to just print the commands. Press Ctrl+C to cancel: ".format(num_selected,timelimit))
+        if processing_option in ["", "c"]:
+            done = True
+            
     i = 1
     start_time_benchmarking = time.time()
     for benchmarkset in selected_benchmarks:
@@ -130,8 +136,11 @@ if __name__ == "__main__":
         for command in selected_benchmarks[benchmarkset]:
             logfile_pos = command.find("--logfile")
             command_line = storm_executable + " " + command[:logfile_pos]
-            output, runtime, returncode = execute_command_line(command_line, timelimit)
             logfile = os.path.join(logdir, "{}-{}".format(benchmarkset, command[logfile_pos + len("--logfile "):].strip()))
+            if processing_option == "c":
+                print("{}> {}".format(command_line, logfile))
+                continue
+            output, runtime, returncode = execute_command_line(command_line, timelimit)
             with open(logfile, 'w') as file:
                 file.write(output)            
             if returncode == 0:
@@ -141,7 +150,8 @@ if __name__ == "__main__":
             else:
                 print("ERROR: Command {}/{} finished after {} seconds with non-zero exit code {}. Output saved to {}".format(i,num_selected,runtime,returncode,logfile))
             i += 1
-    print("All benchmarks have been executed after {} seconds.".format(time.time() - start_time_benchmarking))
+    if processing_option != "c":
+        print("All benchmarks have been executed after {} seconds.".format(time.time() - start_time_benchmarking))
     
 
     
