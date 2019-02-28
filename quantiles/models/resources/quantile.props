@@ -1,0 +1,3 @@
+const int STEPS;
+
+"goldgem": quantile(max GOLD, max GEM, Pmax>0.95 [F{"gold"}>=GOLD,{"gem"}>=GEM,{"steps"}<=STEPS true]);

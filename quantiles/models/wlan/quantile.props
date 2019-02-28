@@ -1,0 +1,3 @@
+
+//Probability that station 1 sends within T1 time units and stateion 2 sends within T2 time units
+"time1time2": quantile(min T1, min T2, Pmin>0.95 [multi(F{"time"}<=T1 s1=12, F{"time"}<=T2 s2=12)]);

@@ -1,0 +1,50 @@
+Storm 1.3.1 (dev)
+
+Date: Mon Feb 11 08:48:24 2019
+Command line arguments: --prism wlan/wlan6.prism --prop wlan/quantile.props --constants COL=0 --sound '--native:method' ii --statistics --timemem
+Current working directory: /home/tim.quatmann/quantiles/quantiles
+
+ WARN (NativeEquationSolverSettings.cpp:123): Native is not selected as the preferred equation solver, so setting options for native might have no effect.
+Time for model input parsing: 0.056s.
+
+Time for model construction: 85.051s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	5007548
+Transitions: 	11475748
+Choices: 	6350470
+Reward Models:  time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * (s2 = 12) -> 10891 item(s)
+   * init -> 1 item(s)
+   * (s1 = 12) -> 10891 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "time1time2": quantile(min T1, min T2, Pmin>19/20 [multi(true Urew{"time"}<=T1 (s1 = 12), true Urew{"time"}<=T2 (s2 = 12))]) ...
+Number of checked epochs: 2428
+Number of required precision refinements: 0
+Result (for initial states): 
+8 Pareto optimal points found:
+   (      5600,       6050 )
+   (      5650,       5950 )
+   (      5700,       5900 )
+   (      5750,       5800 )
+   (      5800,       5750 )
+   (      5900,       5700 )
+   (      5950,       5650 )
+   (      6050,       5600 )
+
+
+Time for model checking: 5004.506s.
+
+Performance statistics:
+  * peak memory usage: 5223MB
+  * CPU time: 4678.683s
+  * wallclock time: 5089.673s
+
+real	84m49.747s
+user	77m58.691s
+sys	6m46.183s

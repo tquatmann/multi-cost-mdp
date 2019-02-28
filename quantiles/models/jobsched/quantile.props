@@ -1,0 +1,9 @@
+const int BOUND;
+
+//"locUtil": quantile(max localU, Pmax>0.95 [F{"utilityLocal"}>=localU,{"energyLocal"}<=BOUND true ]);
+//"locEnergy": quantile(min localE, Pmax>0.95 [F{"utilityLocal"}>=BOUND,{"energyLocal"}<=localE true ]);
+
+//"glUtil": quantile(max globalU, Pmax>0.95 [F{"utilityGlobal"}>=globalU,{"energyGlobal"}<=BOUND true ]);
+//"glEnergy": quantile(min globalE, Pmax>0.95 [F{"utilityGlobal"}>=BOUND,{"energyGlobal"}<=globalE true ]);
+
+"gloLoEnergy": quantile(min glE, min loE, Pmax>0.95 [F{"utilityGlobal"}>=BOUND,{"energyGlobal"}<=glE,{"energyLocal"}<=loE true ]);

@@ -1,0 +1,2 @@
+const int GoalValue;
+"timeenergy": quantile(min TIME, min ENERGY, Pmax>0.95 [F{"value"}>=GoalValue,{"time"}<=TIME,{"energy"}<=ENERGY done]);

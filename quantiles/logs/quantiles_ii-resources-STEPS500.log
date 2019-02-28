@@ -1,0 +1,71 @@
+Storm 1.3.1 (dev)
+
+Date: Sun Feb 10 11:33:18 2019
+Command line arguments: --prism resources/resources.prism --prop resources/quantile.props --constants STEPS=500 --sound '--native:method' ii --statistics --timemem
+Current working directory: /home/tim.quatmann/quantiles/quantiles
+
+ WARN (NativeEquationSolverSettings.cpp:123): Native is not selected as the preferred equation solver, so setting options for native might have no effect.
+Time for model input parsing: 0.008s.
+
+Time for model construction: 0.022s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	94
+Transitions: 	326
+Choices: 	302
+Reward Models:  steps, gold, gem
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "goldgem": quantile(max GOLD, max GEM, Pmax>19/20 [true U^{rew{"gold"}>=GOLD , rew{"gem"}>=GEM , rew{"steps"}<=500 }true]) ...
+Number of checked epochs: 1005505
+Number of required precision refinements: 0
+Result (for initial states): 
+31 Pareto optimal points found:
+   (         0,         50 )
+   (         1,         49 )
+   (         4,         48 )
+   (         7,         47 )
+   (         9,         46 )
+   (        12,         45 )
+   (        15,         44 )
+   (        18,         43 )
+   (        21,         42 )
+   (        24,         41 )
+   (        27,         40 )
+   (        30,         39 )
+   (        33,         38 )
+   (        36,         37 )
+   (        37,         36 )
+   (        38,         34 )
+   (        39,         32 )
+   (        40,         30 )
+   (        41,         27 )
+   (        42,         25 )
+   (        43,         23 )
+   (        44,         20 )
+   (        45,         18 )
+   (        46,         16 )
+   (        47,         14 )
+   (        48,         11 )
+   (        49,          9 )
+   (        50,          7 )
+   (        51,          4 )
+   (        52,          2 )
+   (        53,          0 )
+
+
+Time for model checking: 2930.550s.
+
+Performance statistics:
+  * peak memory usage: 158MB
+  * CPU time: 2917.820s
+  * wallclock time: 2930.589s
+
+real	48m50.653s
+user	48m37.827s
+sys	0m11.270s

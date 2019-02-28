@@ -1,0 +1,44 @@
+Storm 1.3.1 (dev)
+
+Date: Sat Feb  9 23:35:01 2019
+Command line arguments: --prism jobsched/jobsched02.prism --prop jobsched/quantile.props --constants BOUND=2 --exact --statistics --timemem
+Current working directory: /home/tim.quatmann/quantiles/quantiles
+
+Time for model input parsing: 0.009s.
+
+Time for model construction: 0.037s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	349
+Transitions: 	660
+Choices: 	411
+Reward Models:  utilityGlobal, energyLocal, energyGlobal
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "gloLoEnergy": quantile(min glE, min loE, Pmax>19/20 [true U^{rew{"utilityGlobal"}>=2 , rew{"energyGlobal"}<=glE , rew{"energyLocal"}<=loE }true]) ...
+Number of checked epochs: 8311
+Number of required precision refinements: 0
+Result (for initial states): 
+5 Pareto optimal points found:
+   (        64,         34 )
+   (        71,         32 )
+   (        75,         31 )
+   (        85,         30 )
+   (        99,         29 )
+
+
+Time for model checking: 18.894s.
+
+Performance statistics:
+  * peak memory usage: 194MB
+  * CPU time: 18.953s
+  * wallclock time: 19.033s
+
+real	0m19.092s
+user	0m18.966s
+sys	0m0.117s
