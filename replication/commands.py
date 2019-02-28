@@ -201,9 +201,33 @@ commands["multi_pi_seq"] = r"""
 """.strip().split("\n")
 
 commands["quantiles_ii"] = r"""
+--prism ../quantiles/models/jobsched/jobsched02.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=2 --sound --native:method ii --statistics --timemem  --logfile jobsched-BOUND2.log
+--prism ../quantiles/models/jobsched/jobsched03.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=3 --sound --native:method ii --statistics --timemem  --logfile jobsched-BOUND3.log
+--prism ../quantiles/models/jobsched/jobsched05.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=5 --sound --native:method ii --statistics --timemem  --logfile jobsched-BOUND5.log
+--prism ../quantiles/models/firewire/firewire.prism --prop ../quantiles/models/firewire/quantile.props --constants delay=36 --sound --native:method ii --statistics --timemem  --logfile firewire-delay36.log
+--prism ../quantiles/models/resources/resources.prism --prop ../quantiles/models/resources/quantile.props --constants STEPS=100 --sound --native:method ii --statistics --timemem  --logfile resources-STEPS100.log
+--prism ../quantiles/models/resources/resources.prism --prop ../quantiles/models/resources/quantile.props --constants STEPS=250 --sound --native:method ii --statistics --timemem  --logfile resources-STEPS250.log
+--prism ../quantiles/models/resources/resources.prism --prop ../quantiles/models/resources/quantile.props --constants STEPS=500 --sound --native:method ii --statistics --timemem  --logfile resources-STEPS500.log
+--prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=50 --sound --native:method ii --statistics --timemem  --logfile rover-GoalValue50.log
+--prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=100 --sound --native:method ii --statistics --timemem  --logfile rover-GoalValue100.log
+--prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=150 --sound --native:method ii --statistics --timemem  --logfile rover-GoalValue150.log
+--prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  --logfile wlan-COL0.log
+--prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  --logfile wlan-COL0.log
 """.strip().split("\n")
 
 commands["quantiles_pi"] = r"""
+--prism ../quantiles/models/jobsched/jobsched02.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=2 --exact --statistics --timemem  --logfile jobsched-BOUND2.log
+--prism ../quantiles/models/jobsched/jobsched03.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=3 --exact --statistics --timemem  --logfile jobsched-BOUND3.log
+--prism ../quantiles/models/jobsched/jobsched05.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=5 --exact --statistics --timemem  --logfile jobsched-BOUND5.log
+--prism ../quantiles/models/firewire/firewire.prism --prop ../quantiles/models/firewire/quantile.props --constants delay=36 --exact --statistics --timemem  --logfile firewire-delay36.log
+--prism ../quantiles/models/resources/resources.prism --prop ../quantiles/models/resources/quantile.props --constants STEPS=100 --exact --statistics --timemem  --logfile resources-STEPS100.log
+--prism ../quantiles/models/resources/resources.prism --prop ../quantiles/models/resources/quantile.props --constants STEPS=250 --exact --statistics --timemem  --logfile resources-STEPS250.log
+--prism ../quantiles/models/resources/resources.prism --prop ../quantiles/models/resources/quantile.props --constants STEPS=500 --exact --statistics --timemem  --logfile resources-STEPS500.log
+--prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=50 --exact --statistics --timemem  --logfile rover-GoalValue50.log
+--prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=100 --exact --statistics --timemem  --logfile rover-GoalValue100.log
+--prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=150 --exact --statistics --timemem  --logfile rover-GoalValue150.log
+--prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  --logfile wlan-COL0.log
+--prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  --logfile wlan-COL0.log
 """.strip().split("\n")
 
 
