@@ -3,20 +3,20 @@ from collections import OrderedDict
 from commands import commands
 
 storm_executable_default = "~/storm/build/bin/storm"
-timeout_default = 7200 # seconds
+timelimit_default = 7200 # seconds
 logdir_default = "log/"
 
 class CommandExecution(object):
     """ Represents the execution of a single command line argument. """
     def __init__(self):
-        self.timeout = None
+        self.timelimit = None
         self.return_code = None
         self.output = None
         self.wall_time = None
         self.proc = None
 
     def stop(self):
-        self.timeout = True
+        self.timelimit = True
         self.proc.kill()
 
     def run(self, command_line_str, time_limit):
@@ -25,7 +25,7 @@ class CommandExecution(object):
         self.proc = subprocess.Popen(command_line_list, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         start_time = time.time()
         timer = threading.Timer(time_limit, self.stop)
-        self.timeout = False
+        self.timelimit = False
         self.output = ""
         timer.start()
         try:
@@ -39,24 +39,29 @@ class CommandExecution(object):
         self.output = self.output + stdout.decode('utf8')
         if len(stderr) > 0:
             self.output = self.output + "\n" + "#"*30 + "Output to stderr" + "#"*30 + "\n" + stderr.decode('utf8')
-        if self.timeout and self.wall_time <= time_limit:
-            print("WARN: A timeout was triggered although the measured time is {} seconds which is still below the time limit of {} seconds".format(self.wall_time, time_limit))
+        if self.timelimit and self.wall_time <= time_limit:
+            print("WARN: A timelimit was triggered although the measured time is {} seconds which is still below the time limit of {} seconds".format(self.wall_time, time_limit))
 
 
-def execute_command_line(command_line_str : str, time_limit : int):
+def execute_command_line(command_line_str, time_limit):
     """
     Executes the given command line with the given time limit (in seconds).
-    :returns the output of the command (including the output to stderr, if present), the runtime of the command and either the return code or None (in case of a timeout)
+    :returns the output of the command (including the output to stderr, if present), the runtime of the command and either the return code or None (in case of a timelimit)
     """
     execution = CommandExecution()
     execution.run(command_line_str, time_limit)
-    if execution.timeout:
+    if execution.timelimit:
         return execution.output, execution.wall_time, None
     else:
         return execution.output, execution.wall_time, execution.return_code
 
 if __name__ == "__main__":
-
+    # Make input(..) work in python2...
+    try:
+        input = raw_input
+    except NameError:
+        pass
+        
     storm_executable = input("Enter path to storm binary [{}]: ".format(storm_executable_default))
     if storm_executable == "":
         storm_executable = storm_executable_default
@@ -102,11 +107,11 @@ if __name__ == "__main__":
             selected_benchmarks[available_options[option]] = commands[available_options[option]]
             num_selected += len(commands[available_options[option]])
     
-    timeout_str = input("Enter a time out in seconds [{}]: ".format(timeout_default))
-    if timeout_str == "":
-        timeout = timeout_default
+    timelimit_str = input("Enter a time limit in seconds [{}]: ".format(timelimit_default))
+    if timelimit_str == "":
+        timelimit = timelimit_default
     else:
-        timeout = int(timeout_str)
+        timelimit = int(timelimit_str)
     
     logdir = input("Enter path for logfiles [{}]: ".format(logdir_default))
     if logdir == "":
@@ -114,7 +119,7 @@ if __name__ == "__main__":
     if not os.path.exists(logdir):
         os.makedirs(logdir)
         
-    print ("Execution of {} benchmarks with {} seconds time out starts in 5 seconds.".format(num_selected, timeout))
+    print ("Execution of {} benchmarks with {} seconds time limit starts in 5 seconds. Press Ctrl+C to cancel.".format(num_selected, timelimit))
     time.sleep(5)
     
     i = 1
@@ -125,13 +130,13 @@ if __name__ == "__main__":
         for command in selected_benchmarks[benchmarkset]:
             logfile_pos = command.find("--logfile")
             command_line = storm_executable + " " + command[:logfile_pos]
-            output, runtime, returncode = execute_command_line(command_line, timeout)
+            output, runtime, returncode = execute_command_line(command_line, timelimit)
             logfile = os.path.join(logdir, "{}-{}".format(benchmarkset, command[logfile_pos + len("--logfile "):].strip()))
             with open(logfile, 'w') as file:
                 file.write(output)            
             if returncode == 0:
                 print("Command {}/{} finished after {} seconds. Output saved to {}".format(i,num_selected, runtime, logfile))
-            elif returncode is None and runtime >= timeout:
+            elif returncode is None and runtime >= timelimit:
                 print("Command {}/{} timed out after {} seconds. Output saved to {}".format(i,num_selected, runtime, logfile))
             else:
                 print("ERROR: Command {}/{} finished after {} seconds with non-zero exit code {}. Output saved to {}".format(i,num_selected,runtime,returncode,logfile))
