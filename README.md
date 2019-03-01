@@ -64,7 +64,7 @@ The provided arguments have the following meaning:
 
 A quantile query can be checked using the following command
 ```
-your/path/to/storm/build/bin/storm --prism quantiles/models/rover/rover.prism --prop 'quantile(min TIME, min ENERGY, Pmax>0.95 [F{"value"}>=GoalValue,{"time"}<=TIME,{"energy"}<=ENERGY done])' --sound -tm
+your/path/to/storm/build/bin/storm --prism quantiles/models/rover/rover.prism --prop 'quantile(min TIME, min ENERGY, Pmax>0.95 [F{"value"}>=50,{"time"}<=TIME,{"energy"}<=ENERGY done])' --sound -tm
 ```
 
 ## Checking other multi-cost bounded properties in Storm
