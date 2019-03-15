@@ -180,8 +180,8 @@
 ~/storm/build/bin/storm --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=50 --sound --native:method ii --statistics --timemem  > log/quantiles_ii-rover-GoalValue50.log
 ~/storm/build/bin/storm --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=100 --sound --native:method ii --statistics --timemem  > log/quantiles_ii-rover-GoalValue100.log
 ~/storm/build/bin/storm --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=150 --sound --native:method ii --statistics --timemem  > log/quantiles_ii-rover-GoalValue150.log
-~/storm/build/bin/storm --prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  > log/quantiles_ii-wlan-COL0.log
-~/storm/build/bin/storm --prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  > log/quantiles_ii-wlan-COL0.log
+~/storm/build/bin/storm --prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  > log/quantiles_ii-wlan3-COL0.log
+~/storm/build/bin/storm --prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  > log/quantiles_ii-wlan6-COL0.log
 ~/storm/build/bin/storm --prism ../quantiles/models/jobsched/jobsched02.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=2 --exact --statistics --timemem  > log/quantiles_pi-jobsched-BOUND2.log
 ~/storm/build/bin/storm --prism ../quantiles/models/jobsched/jobsched03.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=3 --exact --statistics --timemem  > log/quantiles_pi-jobsched-BOUND3.log
 ~/storm/build/bin/storm --prism ../quantiles/models/jobsched/jobsched05.prism --prop ../quantiles/models/jobsched/quantile.props --constants BOUND=5 --exact --statistics --timemem  > log/quantiles_pi-jobsched-BOUND5.log
@@ -192,5 +192,5 @@
 ~/storm/build/bin/storm --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=50 --exact --statistics --timemem  > log/quantiles_pi-rover-GoalValue50.log
 ~/storm/build/bin/storm --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=100 --exact --statistics --timemem  > log/quantiles_pi-rover-GoalValue100.log
 ~/storm/build/bin/storm --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=150 --exact --statistics --timemem  > log/quantiles_pi-rover-GoalValue150.log
-~/storm/build/bin/storm --prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  > log/quantiles_pi-wlan-COL0.log
-~/storm/build/bin/storm --prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  > log/quantiles_pi-wlan-COL0.log
+~/storm/build/bin/storm --prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  > log/quantiles_pi-wlan3-COL0.log
+~/storm/build/bin/storm --prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  > log/quantiles_pi-wlan6-COL0.log

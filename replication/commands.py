@@ -211,8 +211,8 @@ commands["quantiles_ii"] = r"""
 --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=50 --sound --native:method ii --statistics --timemem  --logfile rover-GoalValue50.log
 --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=100 --sound --native:method ii --statistics --timemem  --logfile rover-GoalValue100.log
 --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=150 --sound --native:method ii --statistics --timemem  --logfile rover-GoalValue150.log
---prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  --logfile wlan-COL0.log
---prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  --logfile wlan-COL0.log
+--prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  --logfile wlan3-COL0.log
+--prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --sound --native:method ii --statistics --timemem  --logfile wlan6-COL0.log
 """.strip().split("\n")
 
 commands["quantiles_pi"] = r"""
@@ -226,8 +226,8 @@ commands["quantiles_pi"] = r"""
 --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=50 --exact --statistics --timemem  --logfile rover-GoalValue50.log
 --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=100 --exact --statistics --timemem  --logfile rover-GoalValue100.log
 --prism ../quantiles/models/rover/rover.prism --prop ../quantiles/models/rover/quantile.props --constants GoalValue=150 --exact --statistics --timemem  --logfile rover-GoalValue150.log
---prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  --logfile wlan-COL0.log
---prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  --logfile wlan-COL0.log
+--prism ../quantiles/models/wlan/wlan3.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  --logfile wlan3-COL0.log
+--prism ../quantiles/models/wlan/wlan6.prism --prop ../quantiles/models/wlan/quantile.props --constants COL=0 --exact --statistics --timemem  --logfile wlan6-COL0.log
 """.strip().split("\n")
 
 
